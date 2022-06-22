@@ -40,6 +40,14 @@ public class TreeNode {
     }
 
     /**
+     * Sets the data cotained in this node.
+     * @param data The data to be set.
+     */
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    /**
      * Returns the left child of the node.
      * @return TreeNode l, this nodes left child.
      */

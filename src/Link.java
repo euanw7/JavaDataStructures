@@ -7,8 +7,8 @@ public class Link {
      * data: The data held in this node.
      * next: A reference to the node next to this one.
      */
-    int data;
-    Link next;
+    private int data;
+    private Link next;
 
     /**
      * Constructs the node.
