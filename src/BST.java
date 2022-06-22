@@ -11,7 +11,7 @@ public class BST {
      * Allows a node to be added to the tree.
      * @param data The data that will be in he node.
      */
-    public void addNode(int data) {
+    public void insert(int data) {
         TreeNode n = new TreeNode(data);
         // If there is no root node this new node will be set as the root.
         if (root == null) {
@@ -23,7 +23,7 @@ public class BST {
     }
 
     /**
-     * This is a recursive method that is used by addNode to set a new node
+     * This is a recursive method that is used by insert to set a new node
      * as a child to an existing node.
      * @param n The node to compare the new node to.
      * @param add The new node.
@@ -59,8 +59,7 @@ public class BST {
      * Post order traversals visit the left children, right children, then root.
      */
     public void postOrder() {
-        LinkedList temp = new LinkedList();
-        LinkedList array = postOrderT(root, temp);
+        LinkedList array = postOrderT(root, new LinkedList());
         array.printList();
     }
 
@@ -84,8 +83,7 @@ public class BST {
      * Pre order traversals visit the root, left children, then right children.
      */
     public void preOrder() {
-        LinkedList temp = new LinkedList();
-        LinkedList array = preOrderT(root, temp);
+        LinkedList array = preOrderT(root, new LinkedList());
         array.printList();
     }
 
@@ -109,8 +107,7 @@ public class BST {
      * In order traversals visit the left children, root, then right children.
      */
     public void inOrder() {
-        LinkedList temp = new LinkedList();
-        LinkedList array = inOrderT(root, temp);
+        LinkedList array = inOrderT(root, new LinkedList());
         array.printList();
     }
 
@@ -127,6 +124,68 @@ public class BST {
             inOrderT(n.getR(), temp);
         }
         return temp;
+    }
+
+    /**
+     * Method to delete a node from the tree by specifying the nodes data.
+     * This method is mainly used to call deleteNode().
+     * @param data The data contained in the node you want to delete.
+     */
+    public void delete(int data) {
+        // Check if the given data is in the tree before trying to delete it.
+        LinkedList treeContents = inOrderT(root, new LinkedList());
+        if (!treeContents.contains(data)) {
+            // If it's not in the tree, notify the user.
+            System.out.println("\nThat integer isn't in the list.");
+        } else {
+            deleteNode(root, data);
+        }
+        
+    }
+
+    /**
+     * A recursive method called by delete() to remove a node from the tree.
+     * @param n The current node being observed.
+     * @param data The data in the node to be deleted.
+     * @return The next node to be looked at.
+     */
+    private TreeNode deleteNode(TreeNode n, int data) {
+        if (n == null) {
+            return n;
+        }
+        if (data < n.getData()) {
+            n.setL(deleteNode(n.getL(), data));
+        } else if (data > n.getData()) {
+            n.setR(deleteNode(n.getR(), data));
+        } else {
+            // Node with 0 or 1 child.
+            if (n.getL() == null) {
+                return n.getR();
+            } else if (n.getR() == null) {
+                return n.getL();
+            }
+
+            // Node with 2 children.
+            n.setData(minValue(n.getR()));
+            n.setR(deleteNode(n.getR(), n.getData()));
+        }
+
+        return n;
+    }
+
+    /**
+     * Method to find the smallest value in a tree starting with the
+     * node passed in as a parameter.
+     * @param n The starting node.
+     * @return The smallest value in the tree.
+     */
+    private int minValue(TreeNode n) {
+        int min = n.getData();
+        while (n.getL() != null) {
+            min = n.getL().getData();
+            n = n.getL();
+        }
+        return min;
     }
 
 }

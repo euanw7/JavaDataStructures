@@ -116,4 +116,22 @@ public class LinkedList {
         }
     }
 
+    /**
+     * Method to return true if the integer passed in as a parameter is in
+     * the list, false otherwise.
+     * @param data The integer to search the list for.
+     * @return Boolean true if the integer is in the list, false otherwise.
+     */
+    public boolean contains(int data) {
+        boolean found = false;
+        Link curNode = head;
+        while (curNode != null) {
+            if (curNode.getData() == data) {
+                found = true;
+            }
+            curNode = curNode.getNext();
+        }
+        return found;
+    }
+
 }
