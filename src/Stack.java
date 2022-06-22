@@ -1,4 +1,10 @@
 /**
+ * Stack.java
+ * @author Euan Watkins
+ * @version 1.0
+ */
+
+/**
  * Stack implementation which can store integers.
  */
 public class Stack {

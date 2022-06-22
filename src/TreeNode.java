@@ -1,4 +1,10 @@
 /**
+ * TreeNode.java
+ * @author Euan Watkins
+ * @version 1.1
+ */
+
+/**
  * A node used to construct binary search trees.
  */
 public class TreeNode {

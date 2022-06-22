@@ -1,4 +1,10 @@
 /**
+ * LinkedList.java
+ * @author Euan Watkins
+ * @version 1.1
+ */
+
+/**
  * Linked List implementation that can store integers.
  */
 public class LinkedList {

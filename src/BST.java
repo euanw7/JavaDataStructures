@@ -1,4 +1,10 @@
 /**
+ * BST.java
+ * @author Euan Watkins
+ * @version 1.1
+ */
+
+/**
  * Binary Search Tree (BST) implementation that stores TreeNode objects.
  * These TreeNode objects can only store integers.
  */

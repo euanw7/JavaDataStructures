@@ -1,4 +1,10 @@
 /**
+ * Queue.java
+ * @author Euan Watkins
+ * @version 1.0
+ */
+
+/**
  * Queue implementation that can store integers.
  */
 public class Queue {

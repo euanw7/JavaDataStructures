@@ -18,10 +18,10 @@ A queue consists of a head and a tail, which are Link objects. The head is the f
 A stack stores one Link object named top which represents the Link on top of the stack. Links can be pushed on to or popped off the top of the stack. The stack can be queried to check if it's empty and to see what data is stored on top without removing it.
 
 ### Linked List
-A linked list stores one Link named head which represents the Link at the beginning of the list. Links can be added to the list by starting at the head and moving onto the next Link until you reach the end. Links can also be deleted from the list by providing the index of the Link you want to delete. Lists can be queried to get the size of the list, to print the contents of the list, and to search the list for a specific Link.
+A linked list stores one Link named head which represents the Link at the beginning of the list. Links can be added to the list by starting at the head and moving onto the next Link until you reach the end. Links can also be deleted from the list by providing the index of the Link you want to delete. Lists can be queried to get the size of the list, to print the contents of the list, to see if the list contains a specified Link, and to search the list for a specific Link.
 
 ### Tree Node
 The TreeNode class represents a node in a binary search tree. It can store an integer which is the data contained in the node and two other TreeNode objects which are this nodes left and right children.
 
 ### Binary Search Tree
-A binary search tree stores one TreeNode object named root which is the beginning of the tree. Nodes can be added to the tree by comparing the new node to the existing nodes and placing it as a leaf depending on the nodes values. A leaf is a node which has no children, so it is at the bottom of a branch. Trees can be queried to traverse and print out the contents of the nodes with post-order, pre-order, and in-order traversals. 
+A binary search tree stores one TreeNode object named root which is the beginning of the tree. Nodes can be added to the tree by comparing the new node to the existing nodes and placing it as a leaf depending on the nodes values. Nodes can also be deleted from the tree by providing the data contained in the node to be deleted. Trees can be queried to traverse and print out the contents of the nodes with post-order, pre-order, and in-order traversals. 

@@ -1,4 +1,10 @@
 /**
+ * Link.java
+ * @author Euan Watkins
+ * @version 1.0
+ */
+
+/**
  * A node used to construct linked structures, such as linked lists, queues and stacks.
  */
 public class Link {
